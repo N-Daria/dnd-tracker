@@ -77,3 +77,16 @@ input[type="radio"] {
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
+
+input:focus {
+  outline: 1px solid #7367f0;
+}
+
+input:disabled {
+  outline: none;
+  box-shadow: none;
+  border: none;
+  cursor: not-allowed;
+  background-color: #4b465c14;
+  opacity: 1;
+}
