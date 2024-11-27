@@ -1,21 +1,41 @@
 <template>
-  <li class="item">
-    <input
-      :value="props.fighter.initiative"
-      @input="(event) => emit('update-initiative', (event.target as HTMLInputElement).value)"
-      type="number"
-      class="input"
-    />
+  <li class="item" @click="setActiveItem">
+    <input type="number" class="input" v-model="props.fighter.initiative" />
 
-    <p>{{ props.fighter?.name }}</p>
+    <p class="fighter__name">{{ props.fighter?.name }}</p>
 
-    <section class="info"></section>
+    <div class="fighter__info">
+      <p>
+        {{ props.fighter?.currentHp }}
+        /
+        {{
+          isFinite(props.fighter?.hp)
+            ? props.fighter?.hp
+            : props.fighter?.hp.average
+        }}
+      </p>
+    </div>
   </li>
 </template>
 
 <script setup lang="ts">
+import { useInitiativeStore } from "../stores/initiative";
+
+const store = useInitiativeStore();
+
 const props = defineProps(["fighter"]);
-const emit = defineEmits(["update-initiative"]);
+
+const setActiveItem = () => {
+  store.activeItem = props.fighter;
+};
+
+// const updateInitiative = (value) => {
+//   console.log(store.fighters);
+
+//   debugger;
+
+//   store.fighter.initiative = Number(value);
+// };
 </script>
 
 <style scoped lang="scss">
@@ -23,6 +43,13 @@ const emit = defineEmits(["update-initiative"]);
   display: flex;
   gap: 10px;
   margin: 10px 0;
+  align-items: center;
+  border-radius: 0.375rem;
+}
+
+.item:hover {
+  cursor: pointer;
+  background-color: #7367f014;
 }
 
 .input {
@@ -30,5 +57,14 @@ const emit = defineEmits(["update-initiative"]);
 
   max-width: 30px;
   text-align: center;
+}
+
+.fighter__name {
+  width: 100%;
+  max-width: 25%;
+}
+
+.fighter__info {
+  width: 100%;
 }
 </style>

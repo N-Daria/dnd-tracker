@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import FighterItem from "./components/FighterItem.vue";
+import Info from "./components/FighterInfo.vue";
+import { computed, onMounted } from "vue";
 
 import { useInitiativeStore } from "./stores/initiative";
-import type { Fighter } from "./stores/interfaces";
 const store = useInitiativeStore();
-const fighters = store.fighters;
+const fighters = computed(() => store.fighters);
 
 function getRandomInteger(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -15,7 +16,7 @@ function calculateModifier(stat: number): number {
 }
 
 const sortFighters = () => {
-  fighters.sort((a, b) => {
+  fighters.value.sort((a, b) => {
     if (a.initiative !== b.initiative) {
       return b.initiative - a.initiative;
     } else {
@@ -25,15 +26,19 @@ const sortFighters = () => {
 };
 
 const calculateInitiative = () => {
-  for (let i = 0; i < fighters.length; i++) {
-    fighters[i].initiative =
-      getRandomInteger(1, 20) + calculateModifier(fighters?.[i]?.dex);
+  for (let i = 0; i < fighters.value.length; i++) {
+    fighters.value[i].initiative =
+      getRandomInteger(1, 20) + calculateModifier(fighters.value[i]?.dex);
   }
 };
 
-function updateInitiative(fighter: Fighter, newValue: number) {
-  fighter.initiative = Number(newValue);
-}
+onMounted(() => {
+  store.getState();
+
+  setInterval(() => {
+    store.saveState();
+  }, 3000);
+});
 </script>
 
 <template>
@@ -44,18 +49,19 @@ function updateInitiative(fighter: Fighter, newValue: number) {
           v-for="(fighter, index) in fighters"
           :fighter
           :key="index"
-          @update-initiative="updateInitiative(fighter, $event)"
         />
       </ul>
 
-      <button class="button" @click="calculateInitiative">
-        Roll initiative
-      </button>
+      <div class="button__container">
+        <button class="button" @click="calculateInitiative">
+          Roll initiative
+        </button>
 
-      <button class="button" @click="sortFighters">Sort</button>
+        <button class="button" @click="sortFighters">Sort</button>
+      </div>
     </section>
 
-    <section class="info">info</section>
+    <Info v-show="store.activeItem" />
   </main>
 </template>
 
@@ -68,14 +74,20 @@ function updateInitiative(fighter: Fighter, newValue: number) {
   gap: 20px;
 }
 
-.order,
-.info {
+.order {
   @include box;
   @include mainText;
+}
+
+.button__container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .button {
   @include mainButton;
   margin: 20px 0 0;
+  max-width: 200px;
 }
 </style>

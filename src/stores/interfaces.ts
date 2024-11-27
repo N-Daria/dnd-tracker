@@ -19,6 +19,9 @@ export interface RareFighter {
 
 export interface Fighter extends RareFighter {
   initiative: number;
+  currentHp: number;
+  id: number;
+  note: string;
 }
 
 export type Conditions =
