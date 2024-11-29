@@ -22,6 +22,8 @@ export interface Fighter extends RareFighter {
   currentHp: number;
   id: number;
   note: string;
+  tempHp: number;
+  hp: number;
 }
 
 export type Conditions =

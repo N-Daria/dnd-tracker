@@ -4,8 +4,8 @@ import { data } from "./data";
 import type { Fighter } from "./interfaces";
 
 export const useInitiativeStore = defineStore("initiative", () => {
-  const fighters = ref([]);
-  const activeItem = ref(null);
+  const fighters = ref<Fighter[]>([]);
+  const activeItem = ref<Fighter | null>(null);
 
   const saveState = () => {
     const storeFighters = localStorage.getItem("fighters");
@@ -16,7 +16,9 @@ export const useInitiativeStore = defineStore("initiative", () => {
   };
 
   const getState = () => {
-    const storeFighters = JSON.parse(localStorage.getItem("fighters"));
+    const storeFighters = JSON.parse(
+      localStorage.getItem("fighters") || "null"
+    );
 
     if (storeFighters) {
       fighters.value = storeFighters;
@@ -31,10 +33,12 @@ export const useInitiativeStore = defineStore("initiative", () => {
     data.forEach((el, index) => {
       const item = {
         ...el,
-        initiative: 0,
+        initiative: 1,
         currentHp: el.hp.average || el.hp,
         id: index,
         note: "",
+        hp: el.hp.average || el.hp,
+        tempHp: 0,
       };
 
       values.push(item);
