@@ -15,9 +15,9 @@ function getRandomInteger(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// function calculateModifier(stat: number): number {
-//   return Math.floor((stat - 10) / 2);
-// }
+function calculateModifier(stat: number): number {
+  return Math.floor((stat - 10) / 2);
+}
 
 const sortFighters = () => {
   fighters.value.sort((a, b) => {
@@ -32,7 +32,7 @@ const sortFighters = () => {
 const calculateInitiative = () => {
   for (let i = 0; i < fighters.value.length; i++) {
     fighters.value[i].initiative =
-      getRandomInteger(1, 20) + fighters.value[i]?.dex;
+      getRandomInteger(1, 20) + calculateModifier(fighters.value[i]?.dex);
   }
 };
 
