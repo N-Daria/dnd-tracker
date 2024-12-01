@@ -36,7 +36,7 @@ export const useInitiativeStore = defineStore("initiative", () => {
         initiative: 1,
         currentHp: el.hp.average || el.hp,
         id: index,
-        note: "",
+        note: el.note || "",
         hp: el.hp.average || el.hp,
         tempHp: 0,
       };

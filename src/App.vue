@@ -1,19 +1,23 @@
 <script setup lang="ts">
 import FighterItem from "./components/FighterItem.vue";
 import Info from "./components/FighterInfo.vue";
-import { computed, onMounted } from "vue";
+import { computed, onMounted, ref } from "vue";
 
 import { useInitiativeStore } from "./stores/initiative";
+import FighterPopup from "./components/FighterPopup.vue";
+
 const store = useInitiativeStore();
+
 const fighters = computed(() => store.fighters);
+const isPopupOpen = ref(false);
 
 function getRandomInteger(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function calculateModifier(stat: number): number {
-  return Math.floor((stat - 10) / 2);
-}
+// function calculateModifier(stat: number): number {
+//   return Math.floor((stat - 10) / 2);
+// }
 
 const sortFighters = () => {
   fighters.value.sort((a, b) => {
@@ -28,8 +32,12 @@ const sortFighters = () => {
 const calculateInitiative = () => {
   for (let i = 0; i < fighters.value.length; i++) {
     fighters.value[i].initiative =
-      getRandomInteger(1, 20) + calculateModifier(fighters.value[i]?.dex);
+      getRandomInteger(1, 20) + fighters.value[i]?.dex;
   }
+};
+
+const togglePopup = () => {
+  isPopupOpen.value = !isPopupOpen.value;
 };
 
 onMounted(() => {
@@ -44,7 +52,7 @@ onMounted(() => {
 <template>
   <main class="main">
     <section class="order">
-      <ul>
+      <ul class="fighters">
         <FighterItem
           v-for="(fighter, index) in fighters"
           :fighter
@@ -53,15 +61,21 @@ onMounted(() => {
       </ul>
 
       <div class="button__container">
-        <button class="button" @click="calculateInitiative">
+        <button class="button button_add" @click="togglePopup" type="button">
+          Add
+        </button>
+
+        <button class="button" @click="calculateInitiative" type="button">
           Roll initiative
         </button>
 
-        <button class="button" @click="sortFighters">Sort</button>
+        <button class="button" @click="sortFighters" type="button">Sort</button>
       </div>
     </section>
 
     <Info v-show="store.activeItem" />
+
+    <FighterPopup v-show="isPopupOpen" :togglePopup />
   </main>
 </template>
 
@@ -79,15 +93,24 @@ onMounted(() => {
   @include mainText;
 }
 
+.fighters {
+  border-bottom: 1px solid #dbdade;
+}
+
 .button__container {
+  flex-wrap: wrap;
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 0 20px;
 }
 
 .button {
   @include mainButton;
   margin: 20px 0 0;
   max-width: 200px;
+}
+
+.button_add {
+  max-width: 100%;
 }
 </style>

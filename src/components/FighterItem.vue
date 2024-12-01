@@ -11,7 +11,8 @@
       class="input"
       min="1"
       max="50"
-      v-model="props.fighter.initiative"
+      :value="props.fighter.initiative"
+      @change="changeInitiavive"
     />
 
     <p class="fighter__name">{{ props.fighter.name }}</p>
@@ -54,6 +55,14 @@ const phChanging = ref();
 
 const setActiveItem = () => {
   store.activeItem = props.fighter;
+};
+
+const changeInitiavive = (event: Event) => {
+  const target = event.target as HTMLInputElement;
+
+  if (store.activeItem) {
+    store.activeItem.initiative = Number(target.value);
+  }
 };
 
 const calculateDamage = (damage: number) => {
@@ -145,6 +154,7 @@ const getTempHp = () => {
 .fighter__name {
   width: 100%;
   max-width: 25%;
+  font-weight: bold;
 }
 
 .fighter__info {
@@ -157,6 +167,7 @@ const getTempHp = () => {
 .fighter__hp {
   width: 100%;
   max-width: 15%;
+  min-width: 70px;
 }
 
 .button__hp {
@@ -171,10 +182,12 @@ const getTempHp = () => {
 
 .button__hp_damage {
   background-image: url("../assets/images/crossedSwords.svg");
+  background-color: red;
 }
 
 .button__hp_heal {
   background-image: url("../assets/images/health-potion.svg");
+  background-color: forestgreen;
 }
 
 .button__hp_half {
@@ -183,5 +196,6 @@ const getTempHp = () => {
 
 .button__hp_temp {
   background-image: url("../assets/images/eternal-love.svg");
+  background-color: dodgerblue;
 }
 </style>
