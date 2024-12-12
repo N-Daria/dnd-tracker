@@ -12,7 +12,7 @@
       min="1"
       max="50"
       :value="props.fighter.initiative"
-      @change="changeInitiavive"
+      @change.stop="changeInitiavive"
     />
 
     <p class="fighter__name">{{ props.fighter.name }}</p>
@@ -34,14 +34,25 @@
         max="1000"
       />
 
-      <button @click="getDamage" class="button__hp button__hp_damage"></button>
       <button
-        @click="getHalfDamage"
+        @click.stop="getDamage"
+        class="button__hp button__hp_damage"
+      ></button>
+      <button
+        @click.stop="getHalfDamage"
         class="button__hp button__hp_half"
       ></button>
-      <button @click="getHeal" class="button__hp button__hp_heal"></button>
-      <button @click="getTempHp" class="button__hp button__hp_temp"></button>
+      <button @click.stop="getHeal" class="button__hp button__hp_heal"></button>
+      <button
+        @click.stop="getTempHp"
+        class="button__hp button__hp_temp"
+      ></button>
     </div>
+
+    <button
+      class="button button__hp button_delete"
+      @click.stop="deleteFighter"
+    ></button>
   </li>
 </template>
 
@@ -125,6 +136,10 @@ const getTempHp = () => {
 
   phChanging.value = 0;
 };
+
+const deleteFighter = () => {
+  store.deleteFighter(props.fighter.id);
+};
 </script>
 
 <style scoped lang="scss">
@@ -197,5 +212,10 @@ const getTempHp = () => {
 .button__hp_temp {
   background-image: url("../assets/images/eternal-love.svg");
   background-color: dodgerblue;
+}
+
+.button_delete {
+  background-image: url("../assets/images/delete.svg");
+  background-color: black;
 }
 </style>

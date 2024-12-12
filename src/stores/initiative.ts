@@ -1,7 +1,7 @@
 import { ref } from "vue";
 import { defineStore } from "pinia";
 import { data } from "./data";
-import type { Fighter } from "./interfaces";
+import type { Fighter, RareFighter } from "./interfaces";
 
 export const useInitiativeStore = defineStore("initiative", () => {
   const fighters = ref<Fighter[]>([]);
@@ -23,19 +23,19 @@ export const useInitiativeStore = defineStore("initiative", () => {
     if (storeFighters) {
       fighters.value = storeFighters;
     } else {
-      setFighters();
+      setFighters(data);
     }
   };
 
-  const setFighters = () => {
+  const setFighters = (data: RareFighter[] | Fighter[]) => {
     const values: Fighter[] = [];
 
-    data.forEach((el, index) => {
+    data.forEach((el) => {
       const item = {
         ...el,
         initiative: 1,
         currentHp: el.hp.average || el.hp,
-        id: index,
+        id: new Date().getTime() + Math.floor(Math.random() * 1000),
         note: el.note || "",
         hp: el.hp.average || el.hp,
         tempHp: 0,
@@ -44,8 +44,20 @@ export const useInitiativeStore = defineStore("initiative", () => {
       values.push(item);
     });
 
-    fighters.value = values;
+    fighters.value = fighters.value.concat(values);
   };
 
-  return { fighters, activeItem, saveState, getState, setFighters };
+  const deleteFighter = (id: number) => {
+    fighters.value = fighters.value.filter((fighter) => fighter.id !== id);
+    saveState();
+  };
+
+  return {
+    fighters,
+    activeItem,
+    saveState,
+    getState,
+    setFighters,
+    deleteFighter,
+  };
 });

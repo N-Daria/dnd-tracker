@@ -62,7 +62,7 @@ onMounted(() => {
 
       <div class="button__container">
         <button class="button button_add" @click="togglePopup" type="button">
-          Add
+          Add fighter
         </button>
 
         <button class="button" @click="calculateInitiative" type="button">
@@ -111,6 +111,7 @@ onMounted(() => {
 }
 
 .button_add {
-  max-width: 100%;
+  margin: 20px 40% 0;
+  max-width: 200px;
 }
 </style>

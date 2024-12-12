@@ -51,6 +51,14 @@
   }
 }
 
+@mixin label {
+  display: block;
+  line-height: 1.47;
+  margin-bottom: 0.25rem;
+  font-size: 0.8125rem;
+  color: #5d596c;
+}
+
 @mixin input {
   font-weight: 400;
   padding: 5px;
