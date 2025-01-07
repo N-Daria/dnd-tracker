@@ -46,7 +46,7 @@ const closePopup = () => {
 
 const formValue = ref({
   name: { value: "", label: "Name", type: "input" },
-  // ac: { value: 10, label: "Armour class", type: "input" },
+  ac: { value: 10, label: "Armour class", type: "input" },
   hp: { value: 10, label: "Hit points", type: "input" },
   dex: { value: 10, label: "Dexterity", type: "input" },
   note: { value: "", label: "Note", type: "input" },
