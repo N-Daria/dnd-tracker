@@ -40,6 +40,20 @@ const togglePopup = () => {
   isPopupOpen.value = !isPopupOpen.value;
 };
 
+function getRandomImage() {
+  const images = import.meta.glob(
+    "@/assets/images/Карты/Бронза/*.{png,jpg,gif}"
+  );
+
+  const keys = Object.keys(images);
+
+  const randomIndex = Math.floor(Math.random() * keys.length);
+
+  console.log(keys[randomIndex]);
+
+  return keys[randomIndex];
+}
+
 onMounted(() => {
   store.getState();
 
@@ -52,24 +66,34 @@ onMounted(() => {
 <template>
   <main class="main">
     <section class="order">
-      <ul class="fighters">
-        <FighterItem
-          v-for="(fighter, index) in fighters"
-          :fighter
-          :key="index"
-        />
-      </ul>
+      <div class="fighters">
+        <div class="button__container">
+          <button class="button" @click="calculateInitiative" type="button">
+            Roll initiative
+          </button>
 
-      <div class="button__container">
-        <button class="button button_add" @click="togglePopup" type="button">
-          Add fighter
-        </button>
+          <button class="button" @click="sortFighters" type="button">
+            Sort
+          </button>
 
-        <button class="button" @click="calculateInitiative" type="button">
-          Roll initiative
-        </button>
+          <!-- <button class="button" @click="getRandomImage" type="button">
+          Get inspiration card
+        </button> -->
+        </div>
 
-        <button class="button" @click="sortFighters" type="button">Sort</button>
+        <ul class="fighters__list">
+          <FighterItem
+            v-for="(fighter, index) in fighters"
+            :fighter
+            :key="index"
+          />
+        </ul>
+
+        <div class="button__container">
+          <button class="button button_add" @click="togglePopup" type="button">
+            Add fighter
+          </button>
+        </div>
       </div>
     </section>
 
@@ -86,14 +110,19 @@ onMounted(() => {
   justify-content: space-between;
   margin: 30px auto;
   gap: 20px;
+
+  flex-wrap: wrap;
 }
 
 .order {
   @include box;
   @include mainText;
+
+  min-width: 590px;
 }
 
-.fighters {
+.fighters__list {
+  border-top: 1px solid #dbdade;
   border-bottom: 1px solid #dbdade;
 }
 
@@ -106,12 +135,23 @@ onMounted(() => {
 
 .button {
   @include mainButton;
-  margin: 20px 0 0;
+  margin: 20px 0;
   max-width: 200px;
 }
 
 .button_add {
-  margin: 20px 40% 0;
+  margin: 20px 0;
   max-width: 200px;
+}
+
+@media (max-width: 768px) {
+  .main {
+    max-width: 100%;
+    margin: 20px 7px;
+  }
+
+  .order {
+    padding: 12px;
+  }
 }
 </style>

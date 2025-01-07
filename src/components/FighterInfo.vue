@@ -2,7 +2,10 @@
   <section class="info" v-if="currentActive">
     <button class="close" @click="closeSection"></button>
 
-    <textarea class="input" v-model="currentActive.note"></textarea>
+    <textarea
+      class="input input_textarea"
+      v-model="currentActive.note"
+    ></textarea>
   </section>
 </template>
 
@@ -23,6 +26,8 @@ const closeSection = () => {
   @include box;
   @include mainText;
   position: relative;
+
+  min-width: 590px;
 }
 
 .close {
@@ -32,5 +37,9 @@ const closeSection = () => {
 .input {
   @include input;
   height: 100%;
+}
+
+.input_textarea {
+  min-height: 100px;
 }
 </style>

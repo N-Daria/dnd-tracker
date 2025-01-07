@@ -64,47 +64,47 @@ export const data: RareFighter[] = [
   //   hasFluff: true,
   // },
 
-  {
-    name: "Тьма",
-    ac: [18],
-    hp: 92,
-    dex: 14,
-  },
+  // {
+  //   name: "Тьма",
+  //   ac: [18],
+  //   hp: 92,
+  //   dex: 14,
+  // },
 
-  {
-    name: "Чарли Паркер",
-    ac: [17],
-    hp: 83,
-    dex: 18,
-  },
+  // {
+  //   name: "Чарли Паркер",
+  //   ac: [17],
+  //   hp: 83,
+  //   dex: 18,
+  // },
 
-  {
-    name: "Решелье",
-    ac: [17],
-    hp: 83,
-    dex: 16,
-  },
+  // {
+  //   name: "Решелье",
+  //   ac: [17],
+  //   hp: 83,
+  //   dex: 16,
+  // },
 
-  {
-    name: "Солт",
-    ac: [11],
-    hp: 71,
-    dex: 13,
-  },
+  // {
+  //   name: "Солт",
+  //   ac: [11],
+  //   hp: 71,
+  //   dex: 13,
+  // },
 
-  {
-    name: "Мист",
-    ac: [18],
-    hp: 102,
-    dex: 18,
-  },
+  // {
+  //   name: "Мист",
+  //   ac: [18],
+  //   hp: 102,
+  //   dex: 18,
+  // },
 
-  {
-    name: "Мириэль",
-    ac: [15],
-    hp: 163,
-    dex: 12,
-  },
+  // {
+  //   name: "Мириэль",
+  //   ac: [15],
+  //   hp: 163,
+  //   dex: 12,
+  // },
 
   //     name: "Силана",
   // {
@@ -447,103 +447,103 @@ export const data: RareFighter[] = [
   // },
 
   //     name: "Solar Bastion Knight",
-  {
-    name: "Рыцарь",
-    source: "BMT",
-    page: 75,
-    size: ["M"],
-    type: {
-      type: "humanoid",
-      tags: ["paladin"],
-    },
-    alignment: ["N", "G"],
-    alignmentPrefix: "typically ",
-    ac: [
-      {
-        ac: 20,
-        from: ["{@item plate armor|PHB}", "{@item shield|PHB}"],
-      },
-    ],
-    hp: {
-      average: 150,
-      formula: "20d8 + 60",
-    },
-    speed: {
-      walk: 30,
-    },
-    str: 18,
-    dex: 10,
-    con: 17,
-    int: 15,
-    wis: 16,
-    cha: 17,
-    save: {
-      wis: "+7",
-      cha: "+7",
-    },
-    skill: {
-      arcana: "+6",
-      history: "+6",
-    },
-    passive: 13,
-    conditionImmune: ["blinded", "charmed", "frightened"],
-    languages: ["Common plus any one language"],
-    cr: "9",
-    spellcasting: [
-      {
-        name: "Spellcasting",
-        type: "spellcasting",
-        headerEntries: [
-          "The knight casts one of the following spells, using Charisma as the spellcasting ability (spell save {@dc 15}):",
-        ],
-        daily: {
-          "1e": [
-            "{@spell Greater Restoration}",
-            "{@spell Sending}",
-            "{@spell Word of Recall} (the prepared sanctuary is the Solar Bastion)",
-          ],
-        },
-        ability: "cha",
-        displayAs: "action",
-      },
-    ],
-    trait: [
-      {
-        name: "Aura of Protection",
-        entries: [
-          "The knight and each ally within 10 feet of it have advantage on saving throws. This trait is suppressed while the knight has the {@condition incapacitated} condition.",
-        ],
-      },
-    ],
-    action: [
-      {
-        name: "Multiattack",
-        entries: ["The knight makes three Sunspear attacks."],
-      },
-      {
-        name: "Sunspear",
-        entries: [
-          "{@atk ms,rs} {@hit 8} to hit, reach 5 ft. or range 120 ft., one target. {@h}14 ({@damage 3d6 + 4}) radiant damage, or 21 ({@damage 5d6 + 4}) radiant damage if the target is a Fiend or an Undead.",
-        ],
-      },
-      {
-        name: "Solar Flare {@recharge 5}",
-        entries: [
-          "The knight unleashes a blaze of brilliant energy that fills a 30-foot-radius sphere centered on the knight. Each creature of the knight's choice in that area must make a {@dc 15} Dexterity saving throw. On a failed save, a creature takes 22 ({@damage 4d10}) radiant damage and has the {@condition blinded} condition until the end of its next turn. On a successful save, a creature takes half as much damage only. For the next minute, the affected area is filled with bright light that is sunlight.",
-        ],
-      },
-    ],
-    actionTags: ["Multiattack"],
-    languageTags: ["C", "X"],
-    damageTags: ["R"],
-    spellcastingTags: ["O"],
-    miscTags: ["AOE"],
-    conditionInflict: ["blinded"],
-    savingThrowForced: ["dexterity"],
-    hasToken: true,
-    hasFluff: true,
-    hasFluffImages: true,
-  },
+  // {
+  //   name: "Рыцарь",
+  //   source: "BMT",
+  //   page: 75,
+  //   size: ["M"],
+  //   type: {
+  //     type: "humanoid",
+  //     tags: ["paladin"],
+  //   },
+  //   alignment: ["N", "G"],
+  //   alignmentPrefix: "typically ",
+  //   ac: [
+  //     {
+  //       ac: 20,
+  //       from: ["{@item plate armor|PHB}", "{@item shield|PHB}"],
+  //     },
+  //   ],
+  //   hp: {
+  //     average: 150,
+  //     formula: "20d8 + 60",
+  //   },
+  //   speed: {
+  //     walk: 30,
+  //   },
+  //   str: 18,
+  //   dex: 10,
+  //   con: 17,
+  //   int: 15,
+  //   wis: 16,
+  //   cha: 17,
+  //   save: {
+  //     wis: "+7",
+  //     cha: "+7",
+  //   },
+  //   skill: {
+  //     arcana: "+6",
+  //     history: "+6",
+  //   },
+  //   passive: 13,
+  //   conditionImmune: ["blinded", "charmed", "frightened"],
+  //   languages: ["Common plus any one language"],
+  //   cr: "9",
+  //   spellcasting: [
+  //     {
+  //       name: "Spellcasting",
+  //       type: "spellcasting",
+  //       headerEntries: [
+  //         "The knight casts one of the following spells, using Charisma as the spellcasting ability (spell save {@dc 15}):",
+  //       ],
+  //       daily: {
+  //         "1e": [
+  //           "{@spell Greater Restoration}",
+  //           "{@spell Sending}",
+  //           "{@spell Word of Recall} (the prepared sanctuary is the Solar Bastion)",
+  //         ],
+  //       },
+  //       ability: "cha",
+  //       displayAs: "action",
+  //     },
+  //   ],
+  //   trait: [
+  //     {
+  //       name: "Aura of Protection",
+  //       entries: [
+  //         "The knight and each ally within 10 feet of it have advantage on saving throws. This trait is suppressed while the knight has the {@condition incapacitated} condition.",
+  //       ],
+  //     },
+  //   ],
+  //   action: [
+  //     {
+  //       name: "Multiattack",
+  //       entries: ["The knight makes three Sunspear attacks."],
+  //     },
+  //     {
+  //       name: "Sunspear",
+  //       entries: [
+  //         "{@atk ms,rs} {@hit 8} to hit, reach 5 ft. or range 120 ft., one target. {@h}14 ({@damage 3d6 + 4}) radiant damage, or 21 ({@damage 5d6 + 4}) radiant damage if the target is a Fiend or an Undead.",
+  //       ],
+  //     },
+  //     {
+  //       name: "Solar Flare {@recharge 5}",
+  //       entries: [
+  //         "The knight unleashes a blaze of brilliant energy that fills a 30-foot-radius sphere centered on the knight. Each creature of the knight's choice in that area must make a {@dc 15} Dexterity saving throw. On a failed save, a creature takes 22 ({@damage 4d10}) radiant damage and has the {@condition blinded} condition until the end of its next turn. On a successful save, a creature takes half as much damage only. For the next minute, the affected area is filled with bright light that is sunlight.",
+  //       ],
+  //     },
+  //   ],
+  //   actionTags: ["Multiattack"],
+  //   languageTags: ["C", "X"],
+  //   damageTags: ["R"],
+  //   spellcastingTags: ["O"],
+  //   miscTags: ["AOE"],
+  //   conditionInflict: ["blinded"],
+  //   savingThrowForced: ["dexterity"],
+  //   hasToken: true,
+  //   hasFluff: true,
+  //   hasFluffImages: true,
+  // },
 
   //     name: "Nightwalker",
   // {
@@ -662,237 +662,265 @@ export const data: RareFighter[] = [
   // },
 
   //     name: "Nightmare Shepherd",
-  {
-    name: "Nightmare Shepherd 1",
-    source: "MOT",
-    page: 221,
-    size: ["L"],
-    type: "fiend",
-    alignment: ["L", "E"],
-    ac: [
-      {
-        ac: 18,
-        from: ["natural armor"],
-      },
-    ],
-    hp: {
-      average: 133,
-      formula: "14d10 + 56",
-    },
-    speed: {
-      walk: 30,
-      fly: 60,
-    },
-    str: 19,
-    dex: 15,
-    con: 18,
-    int: 14,
-    wis: 17,
-    cha: 20,
-    save: {
-      con: "+8",
-      wis: "+7",
-    },
-    skill: {
-      arcana: "+6",
-      deception: "+9",
-      perception: "+7",
-      persuasion: "+9",
-    },
-    senses: ["darkvision 120 ft."],
-    passive: 17,
-    resist: ["cold", "necrotic"],
-    immune: ["poison"],
-    conditionImmune: ["poisoned"],
-    languages: ["Abyssal", "Common", "Infernal"],
-    cr: "11",
-    spellcasting: [
-      {
-        name: "Innate Spellcasting",
-        type: "spellcasting",
-        headerEntries: [
-          "The shepherd's spellcasting ability is Charisma (spell save {@dc 17}). It can innately cast the following spells, requiring no material components:",
-        ],
-        daily: {
-          "1e": [
-            "{@spell confusion}",
-            "{@spell dispel magic}",
-            "{@spell hold person}",
-            "{@spell suggestion}",
-          ],
-        },
-        ability: "cha",
-      },
-    ],
-    trait: [
-      {
-        name: "Aura of Nightmares",
-        entries: [
-          "Undead creatures within 30 feet of the shepherd gain a +5 bonus to attack and damage rolls. When any other creature that isn't undead or a construct starts its turn within 30 feet of the shepherd, that creature must succeed on a {@dc 17} Wisdom saving throw or take 11 ({@damage 2d10}) psychic damage.",
-        ],
-      },
-      {
-        name: "Magic Resistance",
-        entries: [
-          "The shepherd has advantage on saving throws against spells and other magical effects.",
-        ],
-      },
-    ],
-    action: [
-      {
-        name: "Multiattack",
-        entries: [
-          "The shepherd makes two attacks: one with its claws and one with its staff.",
-        ],
-      },
-      {
-        name: "Claws",
-        entries: [
-          "{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}13 ({@damage 2d8 + 4}) slashing damage plus 16 ({@damage 3d10}) necrotic damage.",
-        ],
-      },
-      {
-        name: "Staff",
-        entries: [
-          "{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}11 ({@damage 2d6 + 4}) bludgeoning damage, or 13 ({@damage 2d8 + 4}) bludgeoning damage if used with two hands, plus 26 ({@damage 4d12}) psychic damage.",
-        ],
-      },
-      {
-        name: "Herd the Underworld (Recharges after a Short or Long Rest)",
-        entries: [
-          "The shepherd pulls twisted souls from the Underworld; {@dice 1d6} {@creature shadow||shadows} (without Sunlight Weakness) arise in unoccupied spaces within 20 feet of the shepherd. The shadows act right after the shepherd on the same initiative count and fight until they're destroyed. They disappear when the shepherd dies.",
-        ],
-      },
-    ],
-    traitTags: ["Magic Resistance"],
-    senseTags: ["SD"],
-    actionTags: ["Multiattack"],
-    languageTags: ["AB", "C", "I"],
-    damageTags: ["B", "N", "S", "Y"],
-    spellcastingTags: ["I"],
-    miscTags: ["MW"],
-    conditionInflictSpell: ["paralyzed"],
-    savingThrowForced: ["wisdom"],
-    savingThrowForcedSpell: ["wisdom"],
-    hasToken: true,
-    hasFluff: true,
-    hasFluffImages: true,
-  },
+  // {
+  //   name: "Nightmare Shepherd 1",
+  //   source: "MOT",
+  //   page: 221,
+  //   size: ["L"],
+  //   type: "fiend",
+  //   alignment: ["L", "E"],
+  //   ac: [
+  //     {
+  //       ac: 18,
+  //       from: ["natural armor"],
+  //     },
+  //   ],
+  //   hp: {
+  //     average: 133,
+  //     formula: "14d10 + 56",
+  //   },
+  //   speed: {
+  //     walk: 30,
+  //     fly: 60,
+  //   },
+  //   str: 19,
+  //   dex: 15,
+  //   con: 18,
+  //   int: 14,
+  //   wis: 17,
+  //   cha: 20,
+  //   save: {
+  //     con: "+8",
+  //     wis: "+7",
+  //   },
+  //   skill: {
+  //     arcana: "+6",
+  //     deception: "+9",
+  //     perception: "+7",
+  //     persuasion: "+9",
+  //   },
+  //   senses: ["darkvision 120 ft."],
+  //   passive: 17,
+  //   resist: ["cold", "necrotic"],
+  //   immune: ["poison"],
+  //   conditionImmune: ["poisoned"],
+  //   languages: ["Abyssal", "Common", "Infernal"],
+  //   cr: "11",
+  //   spellcasting: [
+  //     {
+  //       name: "Innate Spellcasting",
+  //       type: "spellcasting",
+  //       headerEntries: [
+  //         "The shepherd's spellcasting ability is Charisma (spell save {@dc 17}). It can innately cast the following spells, requiring no material components:",
+  //       ],
+  //       daily: {
+  //         "1e": [
+  //           "{@spell confusion}",
+  //           "{@spell dispel magic}",
+  //           "{@spell hold person}",
+  //           "{@spell suggestion}",
+  //         ],
+  //       },
+  //       ability: "cha",
+  //     },
+  //   ],
+  //   trait: [
+  //     {
+  //       name: "Aura of Nightmares",
+  //       entries: [
+  //         "Undead creatures within 30 feet of the shepherd gain a +5 bonus to attack and damage rolls. When any other creature that isn't undead or a construct starts its turn within 30 feet of the shepherd, that creature must succeed on a {@dc 17} Wisdom saving throw or take 11 ({@damage 2d10}) psychic damage.",
+  //       ],
+  //     },
+  //     {
+  //       name: "Magic Resistance",
+  //       entries: [
+  //         "The shepherd has advantage on saving throws against spells and other magical effects.",
+  //       ],
+  //     },
+  //   ],
+  //   action: [
+  //     {
+  //       name: "Multiattack",
+  //       entries: [
+  //         "The shepherd makes two attacks: one with its claws and one with its staff.",
+  //       ],
+  //     },
+  //     {
+  //       name: "Claws",
+  //       entries: [
+  //         "{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}13 ({@damage 2d8 + 4}) slashing damage plus 16 ({@damage 3d10}) necrotic damage.",
+  //       ],
+  //     },
+  //     {
+  //       name: "Staff",
+  //       entries: [
+  //         "{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}11 ({@damage 2d6 + 4}) bludgeoning damage, or 13 ({@damage 2d8 + 4}) bludgeoning damage if used with two hands, plus 26 ({@damage 4d12}) psychic damage.",
+  //       ],
+  //     },
+  //     {
+  //       name: "Herd the Underworld (Recharges after a Short or Long Rest)",
+  //       entries: [
+  //         "The shepherd pulls twisted souls from the Underworld; {@dice 1d6} {@creature shadow||shadows} (without Sunlight Weakness) arise in unoccupied spaces within 20 feet of the shepherd. The shadows act right after the shepherd on the same initiative count and fight until they're destroyed. They disappear when the shepherd dies.",
+  //       ],
+  //     },
+  //   ],
+  //   traitTags: ["Magic Resistance"],
+  //   senseTags: ["SD"],
+  //   actionTags: ["Multiattack"],
+  //   languageTags: ["AB", "C", "I"],
+  //   damageTags: ["B", "N", "S", "Y"],
+  //   spellcastingTags: ["I"],
+  //   miscTags: ["MW"],
+  //   conditionInflictSpell: ["paralyzed"],
+  //   savingThrowForced: ["wisdom"],
+  //   savingThrowForcedSpell: ["wisdom"],
+  //   hasToken: true,
+  //   hasFluff: true,
+  //   hasFluffImages: true,
+  // },
   //     name: "Nightmare Shepherd 2",
+  // {
+  //   name: "Nightmare Shepherd 2",
+  //   source: "MOT",
+  //   page: 221,
+  //   size: ["L"],
+  //   type: "fiend",
+  //   alignment: ["L", "E"],
+  //   ac: [
+  //     {
+  //       ac: 18,
+  //       from: ["natural armor"],
+  //     },
+  //   ],
+  //   hp: {
+  //     average: 133,
+  //     formula: "14d10 + 56",
+  //   },
+  //   speed: {
+  //     walk: 30,
+  //     fly: 60,
+  //   },
+  //   str: 19,
+  //   dex: 15,
+  //   con: 18,
+  //   int: 14,
+  //   wis: 17,
+  //   cha: 20,
+  //   save: {
+  //     con: "+8",
+  //     wis: "+7",
+  //   },
+  //   skill: {
+  //     arcana: "+6",
+  //     deception: "+9",
+  //     perception: "+7",
+  //     persuasion: "+9",
+  //   },
+  //   senses: ["darkvision 120 ft."],
+  //   passive: 17,
+  //   resist: ["cold", "necrotic"],
+  //   immune: ["poison"],
+  //   conditionImmune: ["poisoned"],
+  //   languages: ["Abyssal", "Common", "Infernal"],
+  //   cr: "11",
+  //   spellcasting: [
+  //     {
+  //       name: "Innate Spellcasting",
+  //       type: "spellcasting",
+  //       headerEntries: [
+  //         "The shepherd's spellcasting ability is Charisma (spell save {@dc 17}). It can innately cast the following spells, requiring no material components:",
+  //       ],
+  //       daily: {
+  //         "1e": [
+  //           "{@spell confusion}",
+  //           "{@spell dispel magic}",
+  //           "{@spell hold person}",
+  //           "{@spell suggestion}",
+  //         ],
+  //       },
+  //       ability: "cha",
+  //     },
+  //   ],
+  //   trait: [
+  //     {
+  //       name: "Aura of Nightmares",
+  //       entries: [
+  //         "Undead creatures within 30 feet of the shepherd gain a +5 bonus to attack and damage rolls. When any other creature that isn't undead or a construct starts its turn within 30 feet of the shepherd, that creature must succeed on a {@dc 17} Wisdom saving throw or take 11 ({@damage 2d10}) psychic damage.",
+  //       ],
+  //     },
+  //     {
+  //       name: "Magic Resistance",
+  //       entries: [
+  //         "The shepherd has advantage on saving throws against spells and other magical effects.",
+  //       ],
+  //     },
+  //   ],
+  //   action: [
+  //     {
+  //       name: "Multiattack",
+  //       entries: [
+  //         "The shepherd makes two attacks: one with its claws and one with its staff.",
+  //       ],
+  //     },
+  //     {
+  //       name: "Claws",
+  //       entries: [
+  //         "{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}13 ({@damage 2d8 + 4}) slashing damage plus 16 ({@damage 3d10}) necrotic damage.",
+  //       ],
+  //     },
+  //     {
+  //       name: "Staff",
+  //       entries: [
+  //         "{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}11 ({@damage 2d6 + 4}) bludgeoning damage, or 13 ({@damage 2d8 + 4}) bludgeoning damage if used with two hands, plus 26 ({@damage 4d12}) psychic damage.",
+  //       ],
+  //     },
+  //     {
+  //       name: "Herd the Underworld (Recharges after a Short or Long Rest)",
+  //       entries: [
+  //         "The shepherd pulls twisted souls from the Underworld; {@dice 1d6} {@creature shadow||shadows} (without Sunlight Weakness) arise in unoccupied spaces within 20 feet of the shepherd. The shadows act right after the shepherd on the same initiative count and fight until they're destroyed. They disappear when the shepherd dies.",
+  //       ],
+  //     },
+  //   ],
+  //   traitTags: ["Magic Resistance"],
+  //   senseTags: ["SD"],
+  //   actionTags: ["Multiattack"],
+  //   languageTags: ["AB", "C", "I"],
+  //   damageTags: ["B", "N", "S", "Y"],
+  //   spellcastingTags: ["I"],
+  //   miscTags: ["MW"],
+  //   conditionInflictSpell: ["paralyzed"],
+  //   savingThrowForced: ["wisdom"],
+  //   savingThrowForcedSpell: ["wisdom"],
+  //   hasToken: true,
+  //   hasFluff: true,
+  //   hasFluffImages: true,
+  // },
+
   {
-    name: "Nightmare Shepherd 2",
-    source: "MOT",
-    page: 221,
-    size: ["L"],
-    type: "fiend",
-    alignment: ["L", "E"],
-    ac: [
-      {
-        ac: 18,
-        from: ["natural armor"],
-      },
-    ],
-    hp: {
-      average: 133,
-      formula: "14d10 + 56",
-    },
-    speed: {
-      walk: 30,
-      fly: 60,
-    },
-    str: 19,
-    dex: 15,
-    con: 18,
-    int: 14,
-    wis: 17,
-    cha: 20,
-    save: {
-      con: "+8",
-      wis: "+7",
-    },
-    skill: {
-      arcana: "+6",
-      deception: "+9",
-      perception: "+7",
-      persuasion: "+9",
-    },
-    senses: ["darkvision 120 ft."],
-    passive: 17,
-    resist: ["cold", "necrotic"],
-    immune: ["poison"],
-    conditionImmune: ["poisoned"],
-    languages: ["Abyssal", "Common", "Infernal"],
-    cr: "11",
-    spellcasting: [
-      {
-        name: "Innate Spellcasting",
-        type: "spellcasting",
-        headerEntries: [
-          "The shepherd's spellcasting ability is Charisma (spell save {@dc 17}). It can innately cast the following spells, requiring no material components:",
-        ],
-        daily: {
-          "1e": [
-            "{@spell confusion}",
-            "{@spell dispel magic}",
-            "{@spell hold person}",
-            "{@spell suggestion}",
-          ],
-        },
-        ability: "cha",
-      },
-    ],
-    trait: [
-      {
-        name: "Aura of Nightmares",
-        entries: [
-          "Undead creatures within 30 feet of the shepherd gain a +5 bonus to attack and damage rolls. When any other creature that isn't undead or a construct starts its turn within 30 feet of the shepherd, that creature must succeed on a {@dc 17} Wisdom saving throw or take 11 ({@damage 2d10}) psychic damage.",
-        ],
-      },
-      {
-        name: "Magic Resistance",
-        entries: [
-          "The shepherd has advantage on saving throws against spells and other magical effects.",
-        ],
-      },
-    ],
-    action: [
-      {
-        name: "Multiattack",
-        entries: [
-          "The shepherd makes two attacks: one with its claws and one with its staff.",
-        ],
-      },
-      {
-        name: "Claws",
-        entries: [
-          "{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}13 ({@damage 2d8 + 4}) slashing damage plus 16 ({@damage 3d10}) necrotic damage.",
-        ],
-      },
-      {
-        name: "Staff",
-        entries: [
-          "{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}11 ({@damage 2d6 + 4}) bludgeoning damage, or 13 ({@damage 2d8 + 4}) bludgeoning damage if used with two hands, plus 26 ({@damage 4d12}) psychic damage.",
-        ],
-      },
-      {
-        name: "Herd the Underworld (Recharges after a Short or Long Rest)",
-        entries: [
-          "The shepherd pulls twisted souls from the Underworld; {@dice 1d6} {@creature shadow||shadows} (without Sunlight Weakness) arise in unoccupied spaces within 20 feet of the shepherd. The shadows act right after the shepherd on the same initiative count and fight until they're destroyed. They disappear when the shepherd dies.",
-        ],
-      },
-    ],
-    traitTags: ["Magic Resistance"],
-    senseTags: ["SD"],
-    actionTags: ["Multiattack"],
-    languageTags: ["AB", "C", "I"],
-    damageTags: ["B", "N", "S", "Y"],
-    spellcastingTags: ["I"],
-    miscTags: ["MW"],
-    conditionInflictSpell: ["paralyzed"],
-    savingThrowForced: ["wisdom"],
-    savingThrowForcedSpell: ["wisdom"],
-    hasToken: true,
-    hasFluff: true,
-    hasFluffImages: true,
+    name: "Корвус Штормвинд",
+    ac: [14],
+    hp: 10,
+    dex: 16,
+  },
+
+  {
+    name: "Меррик Крепкопых",
+    ac: [15],
+    hp: 11,
+    dex: 19,
+  },
+
+  {
+    name: "Альрик Драконсвет",
+    ac: [18],
+    hp: 12,
+    dex: 6,
+  },
+
+  {
+    name: "Грумп",
+    ac: [18],
+    hp: 11,
+    dex: 10,
   },
 ];
